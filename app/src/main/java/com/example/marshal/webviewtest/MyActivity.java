@@ -21,13 +21,6 @@ public class MyActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.my, menu);
 
         this.webview = (WebView)findViewById(R.id.webview);
         WebSettings settings = webview.getSettings();
@@ -35,6 +28,13 @@ public class MyActivity extends Activity {
         settings.setSupportZoom(false);
         webview.setWebViewClient(new MyCustomWebViewClient());
         webview.loadUrl("http://10.0.2.2:3000/test.html");
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.my, menu);
 
         return true;
     }
